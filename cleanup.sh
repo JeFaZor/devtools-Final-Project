@@ -44,8 +44,8 @@ read -p "Remove backup files too? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Removing backup files..."
-    rm -f joomla_backup*.sql.gz
-    rm -rf backup_files
+    rm -f joomla_backup*.sql.gz  # Remove any remaining files in root
+    rm -rf backup_files          # Remove backup directory
     echo "Backup files removed"
 fi
 
