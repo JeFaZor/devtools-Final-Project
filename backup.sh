@@ -34,7 +34,7 @@ echo "Current backup updated: joomla_backup.sql.gz"
 echo "Backing up Joomla files..."
 if docker volume ls | grep -q joomla_data; then
     mkdir -p backup_files
-    docker run --rm -v joomla_data:/source -v $(pwd)/backup_files:/backup alpine tar czf /backup/joomla_files.tar.gz -C /source .
+    docker run --rm -v joomla_data:/source -v "$(pwd)/backup_files":/backup alpine tar czf /backup/joomla_files.tar.gz -C /source .
     echo "Joomla files backed up"
 fi
 
