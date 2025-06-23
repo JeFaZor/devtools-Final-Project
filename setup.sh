@@ -55,9 +55,9 @@ echo "Checking container status..."
 docker ps
 
 # Restore backup if exists
-if [ -f "joomla_backup.sql.gz" ]; then
+if [ -f "backup_files/joomla_backup.sql.gz" ]; then
     echo "Found backup file, restoring..."
-    ./restore.sh joomla_backup.sql.gz
+    ./restore.sh backup_files/joomla_backup.sql.gz
 fi
 
 # Get server IP
